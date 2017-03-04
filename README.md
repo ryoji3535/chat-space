@@ -23,3 +23,8 @@
 |--------------|--------------|
 | integer      | integer      |
 | 外部キー制約   | 外部キー制約    |
+#テーブル間の関係
+*users:messages = 多対一
+*users:groups = 多対多
+*groups:messages = 多対一
+*users_groupsテーブルはusers,groupsの中間テーブル。
