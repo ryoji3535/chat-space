@@ -1,14 +1,17 @@
-## rubyのバージョン  
+# rubyのバージョン  
 2.3.0-dev  
-## railsのバージョン  
+# railsのバージョン  
 5.0.0.1  
-## データベース設計  
-# messageテーブル  
-*column:type  
-body:text  
-image:string  
-group_id:integer  
-user_id:integer  
-# userテーブル  
-*column:type  
-
+# データベース設計  
+## messageテーブル  
+| body | image  | user_id | group_id |
+|------|--------|---------|----------|
+| text | string | integer | integer  |
+## userテーブル  
+| user_name   | user_image |password| user_id | group_id |
+|-------------|------------|--------|---------|----------|
+| string      | string     |integer | integer | integer  |
+## groupテーブル  
+| group_name | user_id | group_id |
+|------------|---------|----------|
+| string     | integer | integer  |
