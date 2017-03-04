@@ -15,16 +15,17 @@
   height: 96px;
   .header_left{
     width:300px;
-    background_coror: #253141;
+    background-color: #253141;
     .header_left_names{
       margin: 35px 20px 15px 20px;
-      hight:20px;
-      .header_user_name p {
+      hight: 20px;
+      .header_user_name p{
         color: white;
         font-size:16px ;
         text-align:left ;
       }
-      .header_icons i{
+      .header_user_name i{
+        color: white;
         text-align: right;
         font-size:16px ;
       }
