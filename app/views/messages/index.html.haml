@@ -8,42 +8,40 @@
 .header
   .header_left
     .header_user_name
-    /左側のグループ名/
-      %p
-        group_name
-    /右側のアイコン/
-    .header_icons
-      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-      <i class="fa fa-cog" aria-hidden="true"></i>
+      -# 左側のグループ名
+      %p  group_name
+      -# 右側のアイコン
+      %i class="fa fa-pencil-square-o" aria-hidden="true"
+      %i class="fa fa-cog" aria-hidden="true"
 
-/ヘッダー右側/
+-# ヘッダー右側
   .header_right
-/ヘッダー右側の左側の上のグループ名/
+-# ヘッダー右側の左側の上のグループ名
     .header_group_name
       %p
         group_name
-/ヘッダー右側の左側の下のメンバー名/
+-# ヘッダー右側の左側の下のメンバー名
     .header_menbers_names
       %p
         Members: member_names member_names
-/ヘッダー右側の右側のeditボタン/
+-# ヘッダー右側の右側のeditボタン
     .header_edit_btn
     　%p
         Edit
 
-/各チャンネルの案内/
+-# 各チャンネルの案内
 .low_content_left
   .low_content_left_small
-/グループ名/
+-# グループ名
     %p
       group_name
-/最後の発言？/
+-# 最後の発言？
     %p
       まだメッセージはありません。
 
-/下の右側　チャット画面/
+-# 下の右側　チャット画面
 .low_content_right
-/メッセージの塊/
+-# メッセージの塊
   .low_content_right_small
     .user_name
       %p
@@ -55,12 +53,12 @@
       %p
         message
 
-/メッセージ記入欄と送信ボタン/
+-# メッセージ記入欄と送信ボタン
   .message_typing_bar
-/メッセージ記入欄/
+-# メッセージ記入欄
     .form_message
       .form_image
         <i class="fa fa-file-image-o" aria-hidden="true"></i>
-/メッセージ送信ボタン/
+-# メッセージ送信ボタン
     .send_btn
       Send
