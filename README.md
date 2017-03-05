@@ -4,27 +4,33 @@
 5.0.0.1  
 # データベース設計  
 ## messagesテーブル  
-| body     | image    | user_id      | group_id     |
-|----------|----------|--------------|--------------|
-| text     | string   | integer      | integer      |
-| 制約なし | 制約なし | 外部キー制約 | 外部キー制約 |
+| body     | image    | user_id | group_id|
+|----------|----------|---------|-------|
+| text     | string   |inetger  |integer |
+| 制約なし | 制約なし |外部キー制約 | 外部キー制約|
 ## usersテーブル  
-| name     | mail     | password           |message_id|
-|----------|----------|--------------------|----------|
-| string   | string   | integer            |integer   |
-| not null | not null,一意制約 |  not null, 一意制約 |外部キー制約  |
+| name     | mail     | password           |
+|----------|----------|--------------------|
+| string   | string   | integer            |
+| not null | not null,一意制約 |  not null, 一意制約 |
 ## groupsテーブル  
-| name     |message_id|
-|----------|----------|
-| string   |integer   |
-| not null | 外部キー制約 |
+| name     |
+|----------|
+| string   |
+| not null |
 ## users_groupsテーブル  
 | group_id     | user_id      |
 |--------------|--------------|
 | integer      | integer      |
 | 外部キー制約   | 外部キー制約    |
-#テーブル間の関係  
-*users:messages = 多対一  
-*users:groups = 多対多  
-*groups:messages = 多対一  
-*users_groupsテーブルはusers,groupsの中間テーブル。
+
+#モデル間の関係  
+*Userモデル  
+　has_many: messages  
+  has_many: groups, through:users_groups
+*Groupモデル  has_many: messages  
+  has_many: users, through:users_groups
+*Messageモデル  
+  belongs_to: user  
+  belongs_to: group  
+*UsersGroupsモデルはUserモデルとGroupモデルの中間テーブル。
