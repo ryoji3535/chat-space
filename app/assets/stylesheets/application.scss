@@ -1,71 +1,140 @@
-@import "./reset";
-//ポップアップ
-.top_bar{
-  background-color:rgba(0, 166, 255, 1);
-  height: 20px;
-  .nav_comment.text-center p {
-    color: white;
-    text-align:center;
-    font-size:16px;
-  }
+body{
+  background-color: white;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
 }
-
-//ヘッダー
+h1, h2, h3, h4, h5, h6, p{
+  padding: 10px 0;
+  margin: 0;
+  color: white;
+}
 .header{
-  height: 96px;
-  width:100%;
-  .header_left{
-    width:20%;
-    background-color: #253141;
-    float:left;
-    height:80px;
-    padding:20px 20px 20px 20px;
-    .header_left_names{
-      margin: 35px 20px 15px 20px;
-      height: 20px;
-      background-color: white;
-      .header_user_name p{
-        color: white;
-        font-size:16px ;
-        text-align:left ;
-      }
-      .header_user_name i{
-        color: white;
-        text-align: right;
-        font-size:16px ;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  .header__left{
+    width: 260px;
+    height: 100%;
+    background-color: black;
+    padding: 0 20px 0 20px;
+    float: left;
+    .header__left__name__holder{
+      float: left;
+      p{
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 20px;
+        position:relative;
+        top:35px;
+        left:0;
       }
     }
   }
-  .header_right{
-    height:80px;
-    width:80%;
-    background-color:rgba(230, 234, 234, 1);
-    float:right;
-    opacity:0.5;
-    padding:20px 20px 20px 20px;
-    .header_group_name{
-      height:40px;
-      width:300px;
-      background-color:blue;
-      .header_group_name p{
-        color:black;
-        font-size:20px;
-        text-align:left;
+  .header__right{
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    margin-left: 300px;
+    padding: 0 40px 0 40px;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: medium;
+    .header__right__name{
+      width: 200px;
+      float: left;
+      position:relative;
+      top:35px;
+      left:0;
+      h4{
+        width: 100px;
+        color: black;
+        font-size: 20px;
+        padding:0;
+      }
+      p{
+        width: 100px;
+        color: gray;
+        font-size: 10px;
+        padding:0;
+        margin:10px 0 0 0 ;
       }
     }
-    .header_menbers_name p{
-      color:black;
+    .header__right__edit__button{
+      height: 40px;
+      border-width: medium;
+      border-style: solid;
+      border-color: lightblue;
+      float: right;
+      padding: 0 20px 0 20px;
+      position:absolute;
+      top:28px;
+      left:90%;
+      span{
+        color: lightblue;
+        font-size: 15px;
+        position:relative;
+        top:10px;
+        left:0;
+      }
+    }
+  }
+}
+.content{
+  height:800px;
+  width:100%;
+  margin:100px 0 0 0;
+  .content__left{
+    width: 260px;
+    height: 100%;
+    background-color: #253141;
+    padding: 20px 20px 20px 20px;
+    float: left;
+    clear: both;
+    position: fixed;
+    top: 100px;
+    left: 0px;
+  }
+  .content__right{
+    height: 80%;
+    float: right;
+    width: 80%;
+    height: 80%;
+    margin-left: 300px;
+    padding: 0 40px 0 40px;
+    background-color: white;
+    .content__chat{
+      height: 90%;
+      background-color: white;
+    }
+    .content__input{
+      background-color: gray;
+      height: 10%;
+      width:100%;
+      position: fixed;
+      top: 800px;
+      left: 300px;
+      position: fixed;
+      top: 90%;
+      left: 300px;
+      .input__form__box{
+        height:50%;
+        width:70%;
+        background-color:white;
+        float:left;
+        position:absolute;
+        top:25%;
+        left:20px;
+      }
+      .send__button{
+        height:50%;
+        width:20px;
+        background-color:blue;
+        float:right;
+      }
     }
   }
 }
 
-//コンテンツ
-.low_contents{
-  height:900px;
-  .lowcontentleft{
-    background-color:black;
-    width:20%;
-    height:100%;
-    padding:20px 20px 0px 20px;
-  }
-}

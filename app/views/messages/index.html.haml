@@ -1,62 +1,28 @@
-/一番上のポップアップ/
-.top_bar
-  .nav_comment.text-center
-    %p
-      チャットグループが作成されました。
-
-/ヘッダー部分/
-.header
-  .header_left
-    .header_user_name
-      -# 左側のグループ名
-      %p  group_name
-      -# 右側のアイコン
-      -#%i{:class => "fa fa-pencil-square-o", :aria-hidden => "true"}
-      -#%i{:class => "fa fa-cog", :aria-hidden => "true"}
-  -# ヘッダー右側
-  .header_right
-    -# ヘッダー右側の左側の上のグループ名
-    .header_group_names
-      %p  group_name
-    -# ヘッダー右側の左側の下のメンバー名
-    .header_menbers_names
-      %p
-        Members: member_names member_names
-    -# ヘッダー右側の右側のeditボタン
-    .header_edit_btn
-      %p
-        Edit
-.low_contents
-  -# 各チャンネルの案内
-  .lowcontentleft
-    .low_content_left_small
-      -# グループ名
-      %p
-        group_name
-      -# 最後の発言？
-      %p
-        まだメッセージはありません。
-
-    -# 下の右側　チャット画面
-    .low_content_right
-    -# メッセージの塊
-    .low_content_right_small
-      .user_name
-        %p
-          user_name
-      .timestamp
-        %p
-          timestamp
-      .message
-        %p
-          message
-
-    -# メッセージ記入欄と送信ボタン
-    .message_typing_bar
-      -# メッセージ記入欄
-      .form_message
-        .form_image
-          <i class="fa fa-file-image-o" aria-hidden="true"></i>
-      -# メッセージ送信ボタン
-      .send_btn
-        Send
+!!!
+%html
+  %head
+    %meta{:charset => "UTF-8"}/
+    %link{:href => "application.scss", :rel => "stylesheet"}/
+    %title Chat Space
+  %body
+    .header
+      .header__left
+        .header__left__name__holder
+          %p.header__left__name__holder User_name
+      .header__right
+        .header__right__name
+          %h4 sample_group
+          %p MENBERS:sample
+        .header__right__edit__button
+          %span edit
+    .content
+      .content__left
+        %ul#lastmessage__list
+          %li
+      .content__right
+        .content__chat
+          %ul#message
+            %li
+        .content__input
+          .input__form__box
+          .send__button
