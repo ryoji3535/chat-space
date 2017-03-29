@@ -3,12 +3,15 @@
   %head
     %meta{:charset => "UTF-8"}/
     %link{:href => "application.scss", :rel => "stylesheet"}/
+    %link{:href => "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", :rel => "stylesheet"}/
     %title Chat Space
   %body
     .header
       .header__left
         .header__left__name__holder
           %p.header__left__name__holder User_name
+          %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+          %i.fa.fa-cog{"aria-hidden" => "true"}
       .header__right
         .header__right__name
           %h4 sample_group
@@ -25,4 +28,6 @@
             %li
         .content__input
           .input__form__box
+            %i.fa.fa-file-image-o{"aria-hidden" => "true"}
           .send__button
+            %p send
