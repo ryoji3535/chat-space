@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6, p{
   height:100%;
   .content__left{
     width: 260px;
-    height: 100%;
+    height: 475px;
     background-color: #253141;
     padding: 20px 20px 20px 20px;
     float: left;
@@ -110,6 +110,7 @@ h1, h2, h3, h4, h5, h6, p{
     position: fixed;
     top: 100px;
     left: 0px;
+    overflow:auto;
     ul#lastmessage__list{
       list-style-type:none;
       padding:0;
@@ -138,6 +139,7 @@ h1, h2, h3, h4, h5, h6, p{
     background-color: white;
     .content__chat{
       height: 90%;
+      width:940px;
       overflow:scroll;
       ul#message{
         list-style-type:none;
