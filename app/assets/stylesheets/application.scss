@@ -78,23 +78,19 @@ h1, h2, h3, h4, h5, h6, p{
         margin:10px 0 0 0 ;
       }
     }
-    .header__right__edit__button{
+    button{
       height: 40px;
       border-width: medium;
       border-style: solid;
       border-color: lightblue;
+      background-color:white;
       float: right;
       padding: 0 20px 0 20px;
       position:absolute;
       top:28px;
       left:93vw;
-      span{
-        color: lightblue;
-        font-size: 15px;
-        position:relative;
-        top:10px;
-        left:0;
-      }
+      color: lightblue;
+      font-size: 15px;
     }
   }
 }

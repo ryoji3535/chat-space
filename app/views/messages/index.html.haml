@@ -16,8 +16,7 @@
         .header__right__name
           %h4 sample_group
           %p MENBERS:sample
-        .header__right__edit__button
-          %span edit
+        %button{:onclick => "location.href='/group/:id/edit(.:format)'", :type => "button"} edit
     .content
       .content__left
         %ul#lastmessage__list
