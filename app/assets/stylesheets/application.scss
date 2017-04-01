@@ -106,7 +106,6 @@ h1, h2, h3, h4, h5, h6, p{
     position: fixed;
     top: 100px;
     left: 0px;
-    overflow:auto;
     ul#lastmessage__list{
       list-style-type:none;
       padding:0;
@@ -189,13 +188,21 @@ h1, h2, h3, h4, h5, h6, p{
         position:absolute;
         top:20px;
         left:20px;
+        p{
+          color:#434A54;
+          font-size:16px;
+          position:relative;
+          left:50px;
+          top:3px;
+        }
         i{
           color:black;
           padding-top: 0;
           padding-bottom: 0;
           font-size: 20px;
-          position:relative;
-          left:100px;
+          position:absolute;
+          left:96%;
+          top:15px;
         }
       }
       .send__button{
