@@ -14,6 +14,6 @@ module ChatSpace
     g.coffee    false
     g.helper    false
     g.scss      false
-    g.fixtures  false
+    g.yml  false
   end
 end
