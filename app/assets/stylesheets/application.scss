@@ -1,0 +1,226 @@
+html {
+    height: 100%;
+    overflow:hidden;
+}
+body{
+  height:100%;
+  background-color: white;
+  font-size: 14px;
+  color: #333;
+  margin:0;
+  padding:100px 0 80px 0;
+  overflow:hidden;
+}
+h1, h2, h3, h4, h5, h6, p{
+  padding: 10px 0;
+  margin: 0;
+  color: white;
+}
+.header{
+  height: 100px;
+  width:100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  .header__left{
+    width: 260px;
+    height: 100%;
+    background-color: black;
+    padding: 0 20px 0 20px;
+    float: left;
+    .header__left__name__holder{
+      float: left;
+      p{
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 20px;
+        position:relative;
+        top:35px;
+        left:0;
+      }
+      i{
+        color:white;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 20px;
+        position:relative;
+        top:40px;
+        left:100px;
+      }
+    }
+  }
+  .header__right{
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    margin-left: 300px;
+    padding: 0 40px 0 40px;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: medium;
+    .header__right__name{
+      width: 200px;
+      float: left;
+      position:relative;
+      top:35px;
+      left:0;
+      h4{
+        width: 100px;
+        color: black;
+        font-size: 20px;
+        padding:0;
+      }
+      p{
+        width: 100px;
+        color: gray;
+        font-size: 10px;
+        padding:0;
+        margin:10px 0 0 0 ;
+      }
+    }
+    button{
+      height: 40px;
+      border-width: medium;
+      border-style: solid;
+      border-color: lightblue;
+      background-color:white;
+      float: right;
+      padding: 0 20px 0 20px;
+      position:absolute;
+      top:28px;
+      left:93vw;
+      color: lightblue;
+      font-size: 15px;
+    }
+  }
+}
+.content{
+  height:100%;
+  .content__left{
+    width: 260px;
+    height: 475px;
+    background-color: #253141;
+    padding: 20px 20px 20px 20px;
+    float: left;
+    clear: both;
+    position: fixed;
+    top: 100px;
+    left: 0px;
+    ul#lastmessage__list{
+      list-style-type:none;
+      padding:0;
+      li.message{
+        width:100%;
+        padding:0;
+        h5{
+          margin:20px 0 5px 0;
+          padding:0;
+          font-size:15px;
+        }
+        p{
+          margin:0 0 40px 0;
+          padding:0;
+          font-size:11px;
+        }
+      }
+    }
+  }
+  .content__right{
+    height: 81%;
+    float: left;
+    width: 80%;
+    margin-left: 300px;
+    padding: 0 40px 0 40px;
+    background-color: white;
+    .content__chat{
+      height: 90%;
+      width:940px;
+      overflow:scroll;
+      ul#message{
+        list-style-type:none;
+        padding:0;
+        height:300px;
+        li.chat_message{
+          .name__date{
+            width:400px;
+            height:78px;
+            h5.chatmessage {
+              font-size:16px;
+              color:black;
+              padding:40px 0 10px 0;
+              float:left;
+            }
+            p.date {
+              font-size:12px;
+              color:gray;
+              float:left;
+              margin:35px 16px 0;
+            }
+          }
+          p.chat {
+            font-size:14px;
+            color:black;
+            padding:0;
+            clear:both;
+          }
+        }
+        .last{
+          height:40px;
+          width:100%;
+        }
+      }
+    }
+    .content__input{
+      background-color: #c3deff;
+      height: 90px;
+      width:100%;
+      position: fixed;
+      top: 800px;
+      left: 300px;
+      position: fixed;
+      top: 86%;
+      left: 300px;
+      .input__form__box{
+        height:50px;
+        width:62%;
+        background-color:white;
+        float:left;
+        position:absolute;
+        top:20px;
+        left:20px;
+        p{
+          color:#434A54;
+          font-size:16px;
+          position:relative;
+          left:50px;
+          top:3px;
+        }
+        i{
+          color:black;
+          padding-top: 0;
+          padding-bottom: 0;
+          font-size: 20px;
+          position:absolute;
+          left:96%;
+          top:15px;
+        }
+      }
+      .send__button{
+        height:50px;
+        width:10%;
+        background-color:#38aef0;
+        float:right;
+        position:absolute;
+        top:20px;
+        left:65vw;
+        text-align:center;
+        p{
+          color:white;
+          font-size:25px;
+          padding:5px 0 0 0;
+        }
+      }
+    }
+  }
+}
+
