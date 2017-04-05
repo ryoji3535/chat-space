@@ -10,8 +10,10 @@
       .header__left
         .header__left__name__holder
           %p.header__left__name__holder User_name
-          %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
-          %i.fa.fa-cog{"aria-hidden" => "true"}
+          %a.group_maker{:href => "/"}
+            %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+          %a.account_editor{:href => "/users/edit"}
+            %i.fa.fa-cog{"aria-hidden" => "true"}
       .header__right
         .header__right__name
           %h4 sample_group
