@@ -3,6 +3,7 @@
   %head
     %meta{:charset => "UTF-8"}/
     %link{:href => "application.scss", :rel => "stylesheet"}/
+    %link{:href => "group.scss", :rel => "stylesheet"}/
     %link{:href => "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
     %title Chat Space
   %body
@@ -10,7 +11,7 @@
       .header__left
         .header__left__name__holder
           %p.header__left__name__holder User_name
-          %a.group_maker{:href => "/"}
+          %a.group_maker{:href => "/groups/new"}
             %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
           %a.account_editor{:href => "/users/edit"}
             %i.fa.fa-cog{"aria-hidden" => "true"}
