@@ -10,4 +10,8 @@
     -# font awsomeの記述
     -#& link href="css/font-awesome.min.css" rel="stylesheet"
   %body
+    - if notice
+      %p.alert.alert-notice= notice
+    - if alert
+      %p.alert.alert-error= alert
     = yield
