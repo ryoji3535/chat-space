@@ -3,7 +3,6 @@
   %head
     %meta{:charset => "UTF-8"}/
     %link{:href => "application.scss", :rel => "stylesheet"}/
-    %link{:href => "group.scss", :rel => "stylesheet"}/
     %link{:href => "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
     %title Chat Space
   %body
@@ -19,7 +18,7 @@
         .header__right__name
           %h4 sample_group
           %p MENBERS:sample
-        %button{:onclick => "location.href='/group/:id/edit(.:format)'", :type => "button"} edit
+        %button{:onclick => "location.href='/groups/:id/edit(.:format)'", :type => "button"} edit
     .content
       .content__left
         %ul#lastmessage__list
