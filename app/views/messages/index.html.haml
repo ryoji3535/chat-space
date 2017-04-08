@@ -9,16 +9,16 @@
     .header
       .header__left
         .header__left__name__holder
-          %p.header__left__name__holder User_name
+          %p.header__left__name__holder "#{@user.name}"
           %a.group_maker{:href => "/groups/new"}
             %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
           %a.account_editor{:href => "/users/edit"}
             %i.fa.fa-cog{"aria-hidden" => "true"}
       .header__right
         .header__right__name
-          %h4 sample_group
-          %p MENBERS:sample
-        %button{:onclick => "location.href='/groups/:id/edit(.:format)'", :type => "button"} edit
+          %h4 @user.group.name
+          %p MENBERS:@user.name
+        %button{:onclick => "location.href='/groups/group.id/edit'", :type => "button"} edit
     .content
       .content__left
         %ul#lastmessage__list
