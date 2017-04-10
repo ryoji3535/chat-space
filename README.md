@@ -12,7 +12,7 @@
 | name     | mail     | password           |
 |----------|----------|--------------------|
 | string   | string   | integer            |
-| not null | not null,一意制約 |  not null, 一意制約 |
+| not null,一意制約 | not null,一意制約 |  not null, 一意制約 |
 ## groupsテーブル  
 | name     |
 |----------|
