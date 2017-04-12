@@ -3,15 +3,14 @@ class MessagesController < ApplicationController
     @user = User.find(current_user.id)
     @group = @user.groups
     if @group.present?
-      @ug = Group.find(@group[0][:id])
-      @ugo = @ug.users
-      @ugoo = []
+      @groups = Group.find(@group[0][:id])
+      @group_menber = @groups.users
+      @group_menber_names = []
       num = 0
-      while num < @ugo.length
-        @ugoo << @ugo[num][:name]
+      while num < @group_menber.length
+        @group_menber_names << @group_menber[num][:name]
         num = num + 1
       end
     end
-      #@all_groups = Group.find(current_user.id).order("desc")
   end
 end
