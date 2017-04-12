@@ -8,23 +8,11 @@ class GroupsController < ApplicationController
   end
 
   def update
-
     @group = Group.find(params[:id])
-    @menber = @group.users
     @user = User.find_by(name: params[:user_name])
 
-    if @group.name == params[:group_name]
-      if @user.present?
-        @user.user_groups.update(user_id: @user.id)
-      end
-    else
-      if @user.present?
-        @group.update(name: params[:group_name])
-        @user.user_groups.update(group_id: params[:id], user_id: @user.id)
-      else
-        @group.update(name: params[:group_name])
-      end
-    end
+    @group.update(name: params[:group_name])
+    @user.user_groups.update(group_id: params[:id], user_id: @user.id)
     redirect_to  "/"
   end
 
