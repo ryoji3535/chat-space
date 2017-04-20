@@ -17,21 +17,12 @@ class GroupsController < ApplicationController
   end
 
   def create
-
-    gname = params[:group_name]
-    uname = params[:user_name]
-    @test_group = Group.find_by(name: gname)
-    @user = User.find_by(name: uname)
-
-    if @test_group.blank?
-      @group = Group.create(name: gname)
-      @group.user_groups.create(group_id: @group.id, user_id: current_user.id)
-      if @user.present?
-        @group.user_groups.create(group_id: @group.id, user_id: @user.id)
-      end
-    end
+    @user = User.find_by(name: params[:user_name])
+    user_ids = []
+    user_ids << @user[:id] if @user.present?
+    user_ids << current_user.id
+    @group = Group.create(name: params[:name], user_ids: user_ids) if params[:name].present?
     redirect_to  "/"
   end
 
 end
-
