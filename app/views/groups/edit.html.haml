@@ -1,0 +1,19 @@
+.chat-group-form
+  = form_for(@group) do |f|
+  %h1 チャットグループ編集
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        %label.chat-group-form__label グループ名
+      .chat-group-form__field--right
+        = f.text_field :name
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left メンバー
+      .chat-group-form__field--right
+        .chat-group-form__search.clearfix
+          = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
+            = b.label { b.check_box + b.text }
+        #user-search-result
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        = f.submit "data-disable-with" => "Save", :name => "commit", :value => "Save"
