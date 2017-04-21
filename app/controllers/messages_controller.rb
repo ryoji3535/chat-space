@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @user = User.find(current_user.id)
-    @group = @user.groups
+    @group = current_user.groups
     if @group.present?
       @groups = Group.find(@group[0][:id])
       @group_menber = @groups.users

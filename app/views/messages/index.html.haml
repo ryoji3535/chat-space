@@ -9,7 +9,7 @@
     .header
       .header__left
         .header__left__name__holder
-          %p.header__left__name__holder #{@user.name}
+          %p.header__left__name__holder #{current_user.name}
           %a.group_maker{:href => "/groups/new"}
             %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
           %a.account_editor{:href => "/users/edit"}
