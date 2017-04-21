@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/ 
     %title ChatSpace
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -14,18 +14,14 @@
       %p.alert.alert-error= alert
     = yield
     .chat-group-form
-      %h1 新規チャットグループ
-      %form#new_chat_group.new_chat_group{"accept-charset" => "UTF-8", :action => "/groups", :method => "post",:name => "group"}
-        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-        %input{:name => "authenticity_token", :type => "hidden", :value => "AxFKlYEhD6eqX1PiZoTYQDANtKvgcFSXZQXHt5hyTl55/U/CHC5rtPavrcu2za65riz4tekZEy56vP6kEb2wYA=="}/
+      = form_for(@group) do |f|
+        %h1 新規チャットグループ
         .chat-group-form__field.clearfix
-          .chat-group-form__field--left
-            %label.chat-group-form__label{:for => "group"} グループ名
+          .chat-group-form__field--left  グループ名
           .chat-group-form__field--right
-            %input#chat_group_name.chat-group-form__input{:name => "name", :placeholder => "グループ名を入力してください", :type => "text"}/
+            = f.text_field :name
         .chat-group-form__field.clearfix
-          .chat-group-form__field--left
-            %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
+          .chat-group-form__field--left  メンバー
           .chat-group-form__field--right
             .chat-group-form__search.clearfix
               = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
@@ -34,4 +30,4 @@
         .chat-group-form__field.clearfix
           .chat-group-form__field--left
           .chat-group-form__field--right
-            %input.chat-group-form__action-btn{"data-disable-with" => "Save", :name => "commit", :type => "submit", :value => "Save"}/
+            = f.submit "data-disable-with" => "Save", :name => "commit", :value => "Save"

@@ -1,22 +1,20 @@
 class GroupsController < ApplicationController
 
   def new
+    @group = Group.new
   end
 
   def edit
-    @edit_group = Group.find(params[:id])
+    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
-    @group.update(group_params)
-    @group.update(name: params[:name])
+    Group.update(group_params)
     redirect_to  "/"
   end
 
   def create
-    @group = Group.create(group_params)
-    @group.update(name: params[:name])
+    Group.create(group_params)
     redirect_to  "/"
   end
 
