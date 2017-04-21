@@ -9,20 +9,19 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    @user = User.find_by(name: params[:user_name])
-
-    @group.update(name: params[:group_name])
-    @user.user_groups.update(group_id: params[:id], user_id: @user.id)
+    @group.update(group_params)
+    @group.update(name: params[:name])
     redirect_to  "/"
   end
 
   def create
-    @user = User.find_by(name: params[:user_name])
-    user_ids = []
-    user_ids << @user[:id] if @user.present?
-    user_ids << current_user.id
-    @group = Group.create(name: params[:name], user_ids: user_ids) if params[:name].present?
+    @group = Group.create(group_params)
+    @group.update(name: params[:name])
     redirect_to  "/"
+  end
+
+  def group_params
+      params.require("group").permit(:name, {:user_ids => []})
   end
 
 end
