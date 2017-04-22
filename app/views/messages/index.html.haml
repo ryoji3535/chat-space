@@ -15,18 +15,21 @@
           %a.account_editor{:href => "/users/edit"}
             %i.fa.fa-cog{"aria-hidden" => "true"}
       .header__right
-        -if @group.present?
+        -if @groups.present?
           .header__right__name
-            %h4 #{@group[0][:name]}
+            %h4 #{@groups[0][:name]}
+            - @group = Group.find(@groups[0][:id])
+            - @group_menber_names = []
+            - @group.users.map {|n| @group_menber_names << n[:name] }
             %p MENBERS:#{@group_menber_names.join(sep = " ")}
-          %button{:onclick => "location.href='/groups/#{@group[0][:id]}/edit'", :type => "button"} edit
+          %button{:onclick => "location.href='/groups/#{@groups[0][:id]}/edit'", :type => "button"} edit
     .content
       .content__left
         %ul#lastmessage__list
           - num = 0
-          - @group.each do |name|
+          - @groups.each do |name|
             %li.message
-              %h5 #{@group[num][:name]}
+              %h5 #{@groups[num][:name]}
               %p lastmessage
               - num = num +1
       .content__right
