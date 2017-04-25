@@ -18,7 +18,7 @@
         -if @groups.present?
           .header__right__name
             %h4 #{@group.name}
-            %p MENBERS:#{ @group.users.map(&:name).join(sep = " ")}
+            %p MENBERS:#{ @group.users.map(&:name).join(" ")}
           %button{:onclick => "location.href='/groups/#{@group.id}/edit'", :type => "button"} edit
     .content
       .content__left
