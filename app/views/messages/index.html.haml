@@ -15,7 +15,7 @@
           %a.account_editor{:href => "/users/edit"}
             %i.fa.fa-cog{"aria-hidden" => "true"}
       .header__right
-        -if @groups.present?
+        -if @group.present?
           .header__right__name
             %h4 #{@group.name}
             %p MENBERS:#{ @group.users.map(&:name).join(" ")}
