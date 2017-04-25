@@ -17,21 +17,16 @@
       .header__right
         -if @groups.present?
           .header__right__name
-            %h4 #{@groups[0][:name]}
-            - @group = Group.find(@groups[0][:id])
-            - @group_menber_names = []
-            - @group.users.map {|n| @group_menber_names << n[:name] }
-            %p MENBERS:#{@group_menber_names.join(sep = " ")}
-          %button{:onclick => "location.href='/groups/#{@groups[0][:id]}/edit'", :type => "button"} edit
+            %h4 #{@group.name}
+            %p MENBERS:#{ @group.users.map(&:name).join(sep = " ")}
+          %button{:onclick => "location.href='/groups/#{@group.id}/edit'", :type => "button"} edit
     .content
       .content__left
         %ul#lastmessage__list
-          - num = 0
-          - @groups.each do |name|
+          - @groups.each do |group|
             %li.message
-              %h5 #{@groups[num][:name]}
+              %h5 #{group.name}
               %p lastmessage
-              - num = num +1
       .content__right
         .content__chat
           %ul#message
