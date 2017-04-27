@@ -9,7 +9,8 @@ class GroupsController < ApplicationController
   end
 
   def update
-    Group.update(group_params)
+    @group = Group.find(params[:id])
+    @group.update(group_params)
     redirect_to  "/"
   end
 
