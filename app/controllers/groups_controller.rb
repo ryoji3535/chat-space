@@ -1,5 +1,11 @@
 class GroupsController < ApplicationController
 
+  def index
+    @groups = current_user.groups
+    @group = @groups.first
+    @message = Message.new
+  end
+
   def new
     @group = Group.new
   end
