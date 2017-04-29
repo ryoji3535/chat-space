@@ -1,0 +1,81 @@
+!!!
+%html
+  %head
+    %meta{:charset => "UTF-8"}/
+    %link{:href => "application.scss", :rel => "stylesheet"}/
+    %link{:href => "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %title Chat Space
+  %body
+    .header
+      .header__left
+        .header__left__name__holder
+          %p.header__left__name__holder #{current_user.name}
+          %a.group_maker{:href => "/groups/new"}
+            %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+          %a.account_editor{:href => "/users/edit"}
+            %i.fa.fa-cog{"aria-hidden" => "true"}
+      .header__right
+        -if @group.present?
+          .header__right__name
+            %h4 #{@group.name}
+            %p MENBERS:#{ @group.users.map(&:name).join(" ")}
+          %button{:onclick => "location.href='/groups/#{@group.id}/edit'", :type => "button"} edit
+    .content
+      .content__left
+        %ul#lastmessage__list
+        -if @groups.present?
+          - @groups.each do |group|
+            %li.message
+              %h5 #{group.name}
+              %p lastmessage
+              = link_to "messages#index"
+      .content__right
+        .content__chat
+          %ul#message
+            %li.chat_message
+              .name__date
+                %h5.chatmessage sample
+                %p.date date
+              %p.chat message
+            %li.chat_message
+              .name__date
+                %h5.chatmessage sample
+                %p.date date
+              %p.chat message
+            %li.chat_message
+              .name__date
+                %h5.chatmessage sample
+                %p.date date
+              %p.chat message
+            %li.chat_message
+              .name__date
+                %h5.chatmessage sample
+                %p.date date
+              %p.chat message
+            %li.chat_message
+              .name__date
+                %h5.chatmessage sample
+                %p.date date
+              %p.chat message
+            %li.chat_message
+              .name__date
+                %h5.chatmessage sample4qt43q
+                %p.date datet4qtq
+              %p.chat message4qt4q
+            %li.chat_message
+              .name__date
+                %h5.chatmessage sample4qt43q
+                %p.date datet4qtq
+              %p.chat message4qt4q
+            %li.chat_message
+              .name__date
+                %h5.chatmessage sample4qt43q
+                %p.date datet4qtq
+              %p.chat message4qt4q
+            %li.chat_message
+              .name__date
+                %h5.chatmessage sample4qt43q
+                %p.date datet4qtq
+              %p.chat message4qt4q
+            .last
+
