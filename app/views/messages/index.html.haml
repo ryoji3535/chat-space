@@ -25,8 +25,9 @@
         %ul#lastmessage__list
           - @groups.each do |group|
             %li.message
-              %h5 #{group.name}
-              %p lastmessage
+              %a.account_editor{:href => "/groups/#{group.id}/messages"}
+                %h5 #{group.name}
+              %p lastmessagemes
       .content__right
         .content__chat
           %ul#message
@@ -77,8 +78,9 @@
               %p.chat message4qt4q
             .last
         .content__input
-          .input__form__box
-            %p.type type message
-            %i.fa.fa-file-image-o{"aria-hidden" => "true"}
-          .send__button
-            %p send
+          = form_for(@message, url:{action: :create}) do |f|
+            .input__form__box
+              = f.text_field :text, required: true, :placeholder => "type message",:size => "120",:id => "type_text"
+              %i.fa.fa-file-image-o{"aria-hidden" => "true"}
+            .send__button
+              = f.submit :value => "send", :id => "submit_button"
