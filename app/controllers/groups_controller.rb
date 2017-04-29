@@ -1,11 +1,5 @@
 class GroupsController < ApplicationController
 
-  def index
-    @groups = current_user.groups
-    @group = @groups.first
-    @message = Message.new
-  end
-
   def new
     @group = Group.new
   end
@@ -17,12 +11,12 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     @group.update(group_params)
-    redirect_to  "/"
+    redirect_to  "/groups/#{@group.id}/messages"
   end
 
   def create
-    Group.create(group_params)
-    redirect_to  "/"
+    @group = Group.create(group_params)
+    redirect_to  "/groups/#{@group.id}/messages"
   end
 
   private
