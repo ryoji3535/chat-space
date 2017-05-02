@@ -78,7 +78,7 @@
               %p.chat message4qt4q
             .last
         .content__input
-          = form_for(@message, url:{action: :create}) do |f|
+          = form_for([@group,@message]) do |f|
             .input__form__box
               = f.text_field :text, required: true, :placeholder => "type message",:size => "120",:id => "type_text"
               %i.fa.fa-file-image-o{"aria-hidden" => "true"}
