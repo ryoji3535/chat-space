@@ -19,7 +19,7 @@
           .header__right__name
             %h4 #{@group.name}
             %p MENBERS:#{ @group.users.map(&:name).join(" ")}
-          %button{:onclick => "location.href='/groups/#{@group.id}/edit'", :type => "button"} edit
+          %button{:onclick => "location.href='/groups/:id/edit'", :type => "button"} edit
     .content
       .content__left
         %ul#lastmessage__list
