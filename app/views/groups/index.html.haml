@@ -23,59 +23,9 @@
     .content
       .content__left
         %ul#lastmessage__list
-        -if @groups.present?
           - @groups.each do |group|
             %li.message
-              %h5 #{group.name}
-              %p lastmessage
-              = link_to "messages#index"
-      .content__right
-        .content__chat
-          %ul#message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample4qt43q
-                %p.date datet4qtq
-              %p.chat message4qt4q
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample4qt43q
-                %p.date datet4qtq
-              %p.chat message4qt4q
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample4qt43q
-                %p.date datet4qtq
-              %p.chat message4qt4q
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample4qt43q
-                %p.date datet4qtq
-              %p.chat message4qt4q
-            .last
+              %a.account_editor{:href => "/groups/#{group.id}/messages"}
+                %h5 #{group.name}
+              %p lastmessagemes
 
