@@ -27,7 +27,10 @@
             %li.message
               %a.account_editor{href: "/groups/#{group.id}/messages"}
                 %h5 #{group.name}
-              %p lastmessagemes
+              -if group.messages.present?
+                %p #{group.messages.last.text}
+              -else
+                %p no message
       .content__right
         .content__chat
           %ul#message
