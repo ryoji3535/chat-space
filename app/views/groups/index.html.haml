@@ -1,31 +1,31 @@
 !!!
 %html
   %head
-    %meta{:charset => "UTF-8"}/
-    %link{:href => "application.scss", :rel => "stylesheet"}/
-    %link{:href => "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %meta{charset: "UTF-8"}/
+    %link{href: "application.scss", rel: "stylesheet"}/
+    %link{href: "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet"}/
     %title Chat Space
   %body
     .header
       .header__left
         .header__left__name__holder
           %p.header__left__name__holder #{current_user.name}
-          %a.group_maker{:href => "/groups/new"}
-            %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
-          %a.account_editor{:href => "/users/edit"}
-            %i.fa.fa-cog{"aria-hidden" => "true"}
+          %a.group_maker{href: "/groups/new"}
+            %i.fa.fa-pencil-square-o
+          %a.account_editor{href: "/users/edit"}
+            %i.fa.fa-cog
       .header__right
         -if @group.present?
           .header__right__name
             %h4 #{@group.name}
             %p MENBERS:#{ @group.users.map(&:name).join(" ")}
-          %button{:onclick => "location.href='/groups/:id/edit'", :type => "button"} edit
+          %button{onclick: "location.href='/groups/:id/edit'", type: "button"} edit
     .content
       .content__left
         %ul#lastmessage__list
           - @groups.each do |group|
             %li.message
-              %a.account_editor{:href => "/groups/#{group.id}/messages"}
+              %a.account_editor{href: "/groups/#{group.id}/messages"}
                 %h5 #{group.name}
               %p lastmessagemes
 

@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/ 
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/ 
     %title ChatSpace
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -30,4 +30,4 @@
         .chat-group-form__field.clearfix
           .chat-group-form__field--left
           .chat-group-form__field--right
-            = f.submit "data-disable-with" => "Save", :name => "commit", :value => "Save"
+            = f.submit "data-disable-with": "Save", name: "commit", value: "Save"
