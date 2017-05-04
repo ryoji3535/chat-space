@@ -31,52 +31,12 @@
       .content__right
         .content__chat
           %ul#message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample
-                %p.date date
-              %p.chat message
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample4qt43q
-                %p.date datet4qtq
-              %p.chat message4qt4q
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample4qt43q
-                %p.date datet4qtq
-              %p.chat message4qt4q
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample4qt43q
-                %p.date datet4qtq
-              %p.chat message4qt4q
-            %li.chat_message
-              .name__date
-                %h5.chatmessage sample4qt43q
-                %p.date datet4qtq
-              %p.chat message4qt4q
-            .last
+            - @messages.each do |message|
+              %li.chat_message
+                .name__date
+                  %h5.chatmessage #{message.user.name}
+                  %p.date #{message.created_at.to_s(:db)}
+                %p.chat #{message.text}
         .content__input
           = form_for([@group,@message]) do |f|
             .input__form__box

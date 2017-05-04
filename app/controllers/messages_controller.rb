@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
     @groups = current_user.groups
     @group = Group.find(params[:group_id])
     @message = Message.new
+    @messages = Message.where(group_id: params[:group_id]).order("id DESC")
   end
 
   def create
