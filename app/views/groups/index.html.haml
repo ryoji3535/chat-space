@@ -19,7 +19,7 @@
           .header__right__name
             %h4 #{@group.name}
             %p MENBERS:#{ @group.users.map(&:name).join(" ")}
-          %button{onclick: "location.href='/groups/#{@group.id}/edit'", type: "button"} edit
+          %button{onclick: "location.href='/groups/:id/edit'", type: "button"} edit
     .content
       .content__left
         %ul#lastmessage__list
@@ -27,23 +27,5 @@
             %li.message
               %a.account_editor{href: "/groups/#{group.id}/messages"}
                 %h5 #{group.name}
-              -if group.messages.present?
-                %p #{group.messages.last.text}
-              -else
-                %p no message
-      .content__right
-        .content__chat
-          %ul#message
-            - @messages.each do |message|
-              %li.chat_message
-                .name__date
-                  %h5.chatmessage #{message.user.name}
-                  %p.date #{message.created_at.to_s(:db)}
-                %p.chat #{message.text}
-        .content__input
-          = form_for([@group,@message]) do |f|
-            .input__form__box
-              = f.text_field :text, required: true, placeholder: "type message",size: "120",id: "type_text"
-              %i.fa.fa-file-image-o
-            .send__button
-              = f.submit value: "send", id: "submit_button"
+              %p lastmessagemes
+
