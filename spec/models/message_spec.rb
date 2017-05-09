@@ -5,7 +5,7 @@ describe Message do
 
     it "is invalid without a text" do
       message = build(:message, text: "")
-      assert message.valid?
+      message.valid?
       expect(message.errors[:text]).to eq (["translation missing: ja.activerecord.errors.models.message.attributes.text.blank"])
     end
 
