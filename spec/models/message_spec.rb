@@ -1,5 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe Message, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Message do
+  describe '#create' do
+
+    it "is invalid without a text" do
+      message = build(:message, text: "")
+      assert message.valid?
+      expect(message.errors[:text]).to eq (["translation missing: ja.activerecord.errors.models.message.attributes.text.blank"])
+    end
+
+    it "is valid with a text" do
+      message = build(:message)
+      expect(message).to be_valid
+    end
+
+  end
 end
