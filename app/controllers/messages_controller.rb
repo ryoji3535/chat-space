@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    Message.create(text: message_params[:text],image: message_params[:image], user_id: current_user.id, group_id: params[:group_id])
+    Message.create(text: message_params[:text],image: message_params[:image], user_id: params[:user_id], group_id: params[:group_id])
     redirect_to :back
    rescue ActionController::RedirectBackError
     redirect_to  group_messages_path
