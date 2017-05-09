@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe MessagesController do
     describe '有効なパラメータの場合' do
+      let(:user) { create(:user) }
 
       let(:params) do
         {
@@ -11,6 +12,9 @@ describe MessagesController do
           text: 'sample'
           }
         }
+      end
+      before do
+        login_user user
       end
 
       it 'データベースに新しいユーザーが登録されること' do
@@ -26,6 +30,7 @@ describe MessagesController do
     end
 
     describe '無効なパラメータの場合' do
+      let(:user) { create(:user) }
 
       let(:params) do
           {
@@ -35,6 +40,10 @@ describe MessagesController do
             text: ''
             }
           }
+      end
+
+      before do
+        login_user user
       end
 
       it 'データベースに新しいユーザーが登録されないこと' do
