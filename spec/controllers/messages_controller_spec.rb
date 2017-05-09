@@ -19,12 +19,12 @@ describe MessagesController do
 
       it 'データベースに新しいユーザーが登録されること' do
         expect{
-          post :create, params
+          post :create, params: params
         }.to change(Message, :count).by(1)
       end
 
       it 'indexにリダイレクトすること' do
-        post :create, params
+        post :create, params: params
         expect(response).to redirect_to group_messages_path
       end
     end
@@ -48,12 +48,12 @@ describe MessagesController do
 
       it 'データベースに新しいユーザーが登録されないこと' do
         expect{
-          post :create, params
+          post :create, params: params
         }.not_to change(Message, :count)
       end
 
       it 'indexにリダイレクトすること' do
-        post :create, params
+        post :create, params: params
         expect(response).to redirect_to group_messages_path
       end
 
