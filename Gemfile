@@ -40,6 +40,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem "rspec-rails"
   gem "rubocop"
+  gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'rails-controller-testing'
+
 end
 
 group :development do
