@@ -4,7 +4,6 @@ class GroupsController < ApplicationController
     @groups = current_user.groups
   end
 
-
   def new
     @group = Group.new
   end
@@ -15,13 +14,20 @@ class GroupsController < ApplicationController
 
   def update
     group = Group.find(params[:id])
-    group.update(group_params)
-    redirect_to  group_messages_path(group)
+    if group.update(group_params)
+      redirect_to  group_messages_path(group), notice: "更新成功"
+    else
+      redirect_to  group_messages_path(group), alert: "更新失敗"
+    end
   end
 
   def create
-    group = Group.create(group_params)
-    redirect_to  group_messages_path(group)
+    group = Group.new(group_params)
+    if group.save
+      redirect_to  group_messages_path(group), notice: "作成成功"
+    else
+      redirect_to  root_path, alert:"作成失敗"
+    end
   end
 
   private
@@ -29,5 +35,4 @@ class GroupsController < ApplicationController
   def group_params
       params.require("group").permit(:name, {user_ids: []})
   end
-
 end
