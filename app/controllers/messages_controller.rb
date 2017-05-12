@@ -7,8 +7,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    Message.create(text: message_params[:text],image: message_params[:image], user_id: current_user.id, group_id: params[:group_id])
-    redirect_to :back
+    message = Message.new(text: message_params[:text],image: message_params[:image], user_id: current_user.id, group_id: params[:group_id])
+    if message.save
+      redirect_to  group_messages_path, notice: "メッセージ送信成功"
+    else
+      redirect_to  group_messages_path, alert: "メッセージ送信失敗"
+    end
   end
 
   private
